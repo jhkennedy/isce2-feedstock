@@ -1,0 +1,22 @@
+From 7bd57893ed9ae2d7ac0f7dd0e06625e337b0b993 Mon Sep 17 00:00:00 2001
+From: jacquelynsmale <jacquelyn.smale@gmail.com>
+Date: Tue, 14 Apr 2026 10:06:10 -0800
+Subject: [PATCH] add in support for S1D
+
+---
+ components/isceobj/Sensor/TOPS/Sentinel1.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/components/isceobj/Sensor/TOPS/Sentinel1.py b/components/isceobj/Sensor/TOPS/Sentinel1.py
+index 545b0863..41cd9145 100755
+--- a/components/isceobj/Sensor/TOPS/Sentinel1.py
++++ b/components/isceobj/Sensor/TOPS/Sentinel1.py
+@@ -605,6 +605,8 @@ def populateCommonMetadata(self):
+                 burst.trackNumber = (orbitnumber-27)%175 + 1
+             elif mission == 'S1C':
+                 burst.trackNumber = (orbitnumber-172)%175 + 1
++            elif mission == 'S1D':
++                burst.trackNumber = (orbitnumber-42)%175 + 1
+             else:
+                 raise ValueError('Encountered unknown mission id {0}'.format(mission))
+ 
