@@ -16,6 +16,8 @@ source:
       - argument-missmatch.patch
       # Fix ` ld: in .../libs/libcosar.a(Cosar.hh), archive member 'Cosar.hh' with length 440 is not mach-o or llvm bitcode file`
       - cosar-sources.patch
+      # allow processing of Sentinel-1D
+      - isce2-pull-28123.patch
 
 build:
   number: 2
